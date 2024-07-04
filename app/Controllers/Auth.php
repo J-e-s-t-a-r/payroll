@@ -18,6 +18,7 @@ class Auth extends BaseController
     {
         $data['data'] = $id;
         return view('Auth/register', $data);
+        //sample
     }
     
 

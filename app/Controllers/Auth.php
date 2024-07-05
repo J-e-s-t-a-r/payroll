@@ -14,12 +14,12 @@ class Auth extends BaseController
          return view('Auth/register');
     }
 
-    public function reg($id = null)
-    {
-        $data['data'] = $id;
-        return view('Auth/register', $data);
-        //sample
-    }
+    // public function reg($id = null)
+    // {
+    //     $data['data'] = $id;
+    //     return view('Auth/register', $data);
+    //     //sample
+    // }
     
 
 }

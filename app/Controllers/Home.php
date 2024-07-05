@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function employee(): string
+    {
+        return view('employee_table');
+    }
 }

@@ -10,7 +10,7 @@
         <link href="<?php echo base_url('../SB_Admin_Assets/');?>css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-dark">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -18,7 +18,14 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div style="background-image: url(<?php echo base_url('../images');?>/bg-01.png);"></div>
+                                    <div class="" >
+                                        <span>
+                                            <h2 class="text-center font-weight-light my-4"> <b> LOCALIZATION OF EO70 PMO </b> </h1>
+                                            <h3 class="text-center font-weight-light my-4"> PAYROLL SYSTEM </h3>
+                                            <h6 class="text-center font-weight-light my-4"> <i>BETA VERSION</i> </h6> 
+                                        </span>
+                                    </div>
                                     <div class="card-body">
                                         <form>
                                             <div class="form-floating mb-3">

@@ -6,7 +6,7 @@
                         <h1 class="mt-4">LEO70 Employee</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Add New Employee</li>
+                            <li class="breadcrumb-item active">Edit Employee Information</li>
                         </ol>
                         <!-- <div class="card mb-4">
                             <div class="card-body">
@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="/employee">Add New Employee</a></div>
+                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="/employee">Save Changes</a></div>
                                     </div>
                                 </form>
                             </div>                            

@@ -52,7 +52,7 @@
                                             <td>$320,800</td>
                                             <td>
                                                 <div class="" style="text-align: center;">
-                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave">
+                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="/generateFiletoPDF">
                                                         <i class="fas fa-user-check me-1" > </i>
                                                     </a>
                                                     <a href="" class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit">

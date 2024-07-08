@@ -22,6 +22,11 @@ class Home extends BaseController
         return view('add_employee');
     }
 
+    public function editemployee(): string
+    {
+        return view('edit_employee');
+    }
+
     public function generateFiletoPDF() {
         //$userModel = new UserModel();
         //$users = $userModel->findall();

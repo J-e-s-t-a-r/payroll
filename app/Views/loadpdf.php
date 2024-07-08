@@ -144,9 +144,9 @@
                                     </tbody>
                                 </table>
 
-                                <br>
+                                
 
-                                <p><i>Disclaimer: This is not an official receipt. This document is for internal usage of LEO70PMO only and must not be shared with external parties.</i></p>
+                                <p><i>Disclaimer: This is not an official payslip. This document is for internal usage of LEO70PMO only and must not be shared with external parties.</i></p>
 
                             </div>
                         </div>                    

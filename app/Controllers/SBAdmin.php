@@ -9,7 +9,7 @@ class SBAdmin extends BaseController
         return view('SB Admin Template/index');
     }
 
-    public function error401(): int
+    public function error401(): string
     {
         return view('SB Admin Template/401');
     }

@@ -100,6 +100,16 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+
+                            <div class="sb-sidenav-menu-heading">Production</div>
+                            <a class="nav-link" href="/addemployee">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
+                                Add New Employee
+                            </a>
+                            <a class="nav-link" href="/employee">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Employee
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

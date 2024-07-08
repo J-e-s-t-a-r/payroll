@@ -53,13 +53,13 @@
                                             <td>
                                                 <div class="" style="text-align: center;">
                                                     <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave">
-                                                        <i class="fas fa-file me-1" > </i>
+                                                        <i class="fas fa-user-check me-1" > </i>
                                                     </a>
                                                     <a href="" class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit">
-                                                        <i class="fas fa-pencil me-1"> </i> 
+                                                        <i class="fas fa-user-pen me-1"> </i> 
                                                     </a>
                                                     <a class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#myDelete">
-                                                        <i class="fas fa-trash me-1"> </i> 
+                                                        <i class="fas fa-user-xmark me-1"> </i> 
                                                     </a>
                                                 </div>
                                             </td>

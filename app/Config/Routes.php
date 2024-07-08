@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 $routes->get('/employee', 'Home::employee');
+$routes->get('/addemployee', 'Home::addemployee');
+$routes->get('/generateFiletoPDF', 'Home::generateFiletoPDF');
 
 // AUTH
 //$routes->get('/login', 'Auth::login');

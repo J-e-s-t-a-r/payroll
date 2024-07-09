@@ -17,18 +17,33 @@
                         </div> -->
                         
                         <div class="card mb-4">
+
+                            <?php if(session()->getFlashdata('msg')): ?>
+                                <br>
+                                <div class="alert alert-warning">
+                                <?= session()->getFlashdata('msg') ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if(isset($validation)): ?>
+                                    <div class="card">
+                                    <a class="btn btn-warning" disable> <?= $validation->listErrors() ?> </a> 
+                                    </div>
+                                    <?php endif; ?>
+
+
                             <div class="card-body">
-                                <form>
+                            <form action ="/payroll" method ="post">
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputDILGID" type="number" placeholder="Enter your DILG ID" />
+                                                <input class="form-control" name="id" id="inputDILGID" type="number" placeholder="Enter your DILG ID" required />
                                                 <label for="inputDILGID">DILG ID</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input class="form-control" id="inputPosition type="text" placeholder="Enter your Position/Designation" />
+                                                <input class="form-control" name="position" id="inputPosition type="text" placeholder="Enter your Position/Designation" required/>
                                                 <label for="inputPosition">Position</label>
                                             </div>
                                         </div>
@@ -36,19 +51,19 @@
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputFullName" type="text" placeholder="Enter your Name" />
+                                                <input class="form-control" name="fullname" id="inputFullName" type="text" placeholder="Enter your Name" required/>
                                                 <label for="inputFullName">Full Name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputSalary" type="number" placeholder="Enter your Monthly Salary" />
+                                                <input class="form-control" name="salary" id="inputSalary" type="number" placeholder="Enter your Monthly Salary" required/>
                                                 <label for="inputSalary">Monthly Salary</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><a class="btn btn-primary btn-block" href="/employee">Add New Employee</a></div>
+                                        <div class="d-grid"><button type ="submit" class="btn btn-primary btn-block"> Add New Employee </button></div>
                                     </div>
                                 </form>
                             </div>                            

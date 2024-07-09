@@ -5,6 +5,7 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use App\Models\StoreModel;
 use App\Models\LoginModel;
+use App\Models\PayrollModel;
 
 
 class Home extends BaseController
@@ -16,7 +17,9 @@ class Home extends BaseController
 
     public function employee(): string
     {
-        return view('employee_table');
+        $pm = new PayrollModel();
+        $payrolldata['users'] = $pm->findall();
+        return view('employee_table', $payrolldata);
     }
 
     public function addemployee(): string
@@ -27,6 +30,37 @@ class Home extends BaseController
     public function editemployee(): string
     {
         return view('edit_employee');
+    }
+
+    public function payroll()
+    {
+        helper(['form']);
+        $salaryrules = [
+            'id'        => 'required|min_length[4]|max_length[10]|is_unique[information.DILG_ID]',
+            'fullname'  => 'required|min_length[5]|max_length[50]',
+            'position'  => 'required|min_length[5]|max_length[50]',
+            'salary'    => 'required|min_length[5]|max_length[10]'
+        ];
+
+        if ($this->validate($salaryrules)) {
+            $session = session();
+            $pm = new PayrollModel();
+            $salarydata = [
+                'DILG_ID'   => $this->request->getVar('id'),
+                'Name'      => $this->request->getVar('fullname'),
+                'Position'  => $this->request->getVar('position'),
+                'Salary'    => $this->request->getVar('salary')
+            ];
+
+            $pm->save($salarydata);
+            $session->setFlashdata('msg', $salarydata['Name']." information's added successfully!");
+            return redirect('addemployee');
+
+        }
+        else {
+            $data['validation'] = $this->validator;
+            echo view('add_employee', $data);
+        }
     }
 
 
@@ -55,24 +89,28 @@ class Home extends BaseController
         }
     }
 
-    public function generateFiletoPDF() {
-        //$userModel = new UserModel();
-        //$users = $userModel->findall();
+    public function generateFiletoPDF($id=null) {
+
+        $pm = new PayrollModel();
+        $datas = $pm->where('DILG_ID',$id)->first();
+        $payroll['data'] = $datas;
 
         $options = new Options();
         $options->set('isRemoteEnable',true);
 
         $dompdf = new Dompdf($options);
 
-        $html = view('loadpdf'/*,['users'=>$users]*/);
+        $html = view('loadpdf',$payroll);
 
         $dompdf->loadHtml($html);
 
         $dompdf->render();
 
-        $filename = /*'users'*/'sample'.date('YmdHis').'pdf';
+        $filename = $datas['Name'].'sample'.date('YmdHis').'pdf';
 
         $dompdf->stream($filename,['Attachment'=>false]);
+
+
 
     }
 }

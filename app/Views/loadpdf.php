@@ -51,25 +51,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php if($data): ?>
                                         <tr>
                                             <td>DILG ID:</td>
-                                            <td> 09144 </td>
+                                            <td> <?= $data['DILG_ID']; ?> </td>
                                             <td>Month: </td>
-                                            <td> June </td>
+                                            <td> <?= $data['DILG_ID']; ?> </td>
                                         </tr>
                                         
                                         <tr>
                                             <td>Employee Name:</td>
-                                            <td> Jerick E. Arcega</td>
+                                            <td> <?= $data['Name']; ?> </td>
                                             <td>Date Range: </td>
-                                            <td> 1 - 15</td>
+                                            <td> <?= $data['DILG_ID']; ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td>Position:</td>
-                                            <td> Information Systems Analyst III</td>
+                                            <td> <?= $data['Position']; ?> </td>
                                             <td>with 8% Tax: </td>
-                                            <td> Yes </td>
+                                            <td> <?= $data['DILG_ID']; ?> </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -93,30 +94,30 @@
 
                                         <tr>
                                             <td class="td2">Basic Salary</td>
-                                            <td class="td3">49,500.00</td>
+                                            <td class="td3"> <?= number_format($data['Salary'],2); ?> </td>
                                             <td class="td2">UT/L/A</td>
-                                            <td class="td3"> 1,500.00 </td>
+                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
                                         </tr> 
                                         
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2">SSS</td>
-                                            <td class="td3"> 1,500.00 </td>
+                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2">PhilHealth</td>
-                                            <td class="td3"> 1,500.00 </td>
+                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2">8% Tax</td>
-                                            <td class="td3"> 1,500.00 </td>
+                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
                                         </tr>
 
                                         <tr>
@@ -128,22 +129,22 @@
 
                                         <tr>
                                             <td class="td2">TOTAL EARNINGS</td>
-                                            <td class="td3">49,500.00</td>
+                                            <td class="td3"><?= number_format($data['Salary']*2,2); ?></td>
                                             <td class="td2">TOTAL DEDUCTIONS</td>
-                                            <td class="td3"> 6,000.00 </td>
+                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2"><b> NET SALARY </b></td>
-                                            <td class="td3"><b> 43,500.00 </b></td>
+                                            <td class="td3"><b> <?= number_format($data['Salary']*2,2); ?> </b></td>
                                         </tr>
 
                                         
                                     </tbody>
                                 </table>
-
+                                <?php endif; ?>           
                                 
 
                                 <p><i>Disclaimer: This is not an official payslip. This document is for internal usage of LEO70PMO only and must not be shared with external parties.</i></p>

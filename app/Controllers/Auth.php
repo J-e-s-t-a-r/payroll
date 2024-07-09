@@ -18,8 +18,12 @@ class Auth extends BaseController
     public function logout(): string
     {
         $session = session();
-        $session->destroy();
-        $session->setFlashdata('msg','Destroying Session, failed!'. $session->get('user'));
+        $session_data = [
+            'id' => '',
+            'user' => '',
+            'isLoggedIn' => FALSE
+        ];
+        $session->set($session_data);
         return view('login');
     }
 

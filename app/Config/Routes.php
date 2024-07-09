@@ -16,11 +16,12 @@ $routes->get('/logout', 'Auth::logout');
 $routes->match(['get','post'],'/register', 'Auth::register');
 $routes->match(['get','post'],'/store', 'Home::store');
 $routes->match(['get','post'],'/auth', 'Auth::auth');
+$routes->match(['get','post'],'/payroll', 'Home::payroll');
 
 $routes->get('/signin', 'Home::signin');
 
 // GENERATE PDF FILES
-$routes->get('/generateFiletoPDF', 'Home::generateFiletoPDF');
+$routes->get('/generateFiletoPDF/(:any)', 'Home::generateFiletoPDF/$1');
 
 // AUTH
 //$routes->get('/login', 'Auth::login');

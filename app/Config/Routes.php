@@ -2,6 +2,7 @@
 
 use CodeIgniter\Router\RouteCollection;
 
+
 /**
  * @var RouteCollection $routes
  */
@@ -9,6 +10,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/employee', 'Home::employee');
 $routes->get('/addemployee', 'Home::addemployee');
 $routes->get('/editemployee', 'Home::editemployee');
+$routes->get('/login', 'Home::login');
+$routes->match(['get','post'],'/register', 'Home::register');
+$routes->match(['get','post'],'/store', 'Home::store');
+
+// GENERATE PDF FILES
 $routes->get('/generateFiletoPDF', 'Home::generateFiletoPDF');
 
 // AUTH
@@ -25,9 +31,9 @@ $routes->get('/charts', 'SBAdmin::charts');
 $routes->get('/layout1', 'SBAdmin::layout1');
 $routes->get('/layout2', 'SBAdmin::layout2');
 $routes->get('/tables', 'SBAdmin::tables');
-$routes->get('/login', 'SBAdmin::login');
-$routes->get('/password', 'SBAdmin::password');
-$routes->get('/register', 'SBAdmin::register');
+//$routes->get('/login', 'SBAdmin::login');
+//$routes->get('/password', 'SBAdmin::password');
+//$routes->get('/register', 'SBAdmin::register');
 
 
 

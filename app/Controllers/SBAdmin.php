@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\LoginModel;
 
 class SBAdmin extends BaseController
 {
@@ -44,9 +45,13 @@ class SBAdmin extends BaseController
         return view('SB Admin Template/tables');
     }
 
-    public function login(): string
+    public function login()
     {
-        return view('SB Admin Template/login');
+        $p = new LoginModel();
+        $data = $p->findAll();
+        var_dump($data);
+
+        //return view('SB Admin Template/login');
     }
 
     public function password(): string
@@ -56,7 +61,7 @@ class SBAdmin extends BaseController
 
     public function register(): string
     {
-        return view('SB Admin Template/register');
+        //return view('SB Admin Template/register');
     }
     
 

@@ -4,11 +4,9 @@ use CodeIgniter\Model;
 
 final class AccountModel extends Model
 {
-    protected $table = 'accounts';
+    protected $table = 'user';
     protected $allowFields = [
-    'DILG_ID',
-    'Name',
-    'Position',
-    'Salary'
+    'username',
+    'password'
     ];
 }

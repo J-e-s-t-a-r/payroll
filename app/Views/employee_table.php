@@ -1,5 +1,10 @@
 <?php include_once(dirname(__FILE__) . '/layouts/header.php'); ?>
 
+<?php $session = session();
+ if($session->get('isLoggedIn') == TRUE):
+    echo ('login');
+ endif; ?>
+
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

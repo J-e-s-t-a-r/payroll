@@ -29,15 +29,6 @@ class Home extends BaseController
         return view('edit_employee');
     }
 
-    public function login(): string
-    {
-        return view('login');
-    }
-
-    public function register(): string
-    {
-        return view('register');
-    }
 
     public function store()
     {

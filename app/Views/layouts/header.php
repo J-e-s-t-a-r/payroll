@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="login">Logout</a></li>
+                        <li><a class="dropdown-item" href="logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -43,7 +43,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <!-- <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
@@ -99,7 +99,7 @@
                             <a class="nav-link" href="tables">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
-                            </a>
+                            </a> -->
 
                             <div class="sb-sidenav-menu-heading">Production</div>
                             <a class="nav-link" href="/addemployee">
@@ -113,8 +113,9 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
+                        <?php $session = session(); ?>
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php echo $session->get('user'); ?>
                     </div>
                 </nav>
             </div>

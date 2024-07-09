@@ -10,9 +10,14 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/employee', 'Home::employee');
 $routes->get('/addemployee', 'Home::addemployee');
 $routes->get('/editemployee', 'Home::editemployee');
-$routes->get('/login', 'Home::login');
-$routes->match(['get','post'],'/register', 'Home::register');
+
+$routes->get('/login', 'Auth::login');
+$routes->get('/logout', 'Auth::logout');
+$routes->match(['get','post'],'/register', 'Auth::register');
 $routes->match(['get','post'],'/store', 'Home::store');
+$routes->match(['get','post'],'/auth', 'Auth::auth');
+
+$routes->get('/signin', 'Home::signin');
 
 // GENERATE PDF FILES
 $routes->get('/generateFiletoPDF', 'Home::generateFiletoPDF');

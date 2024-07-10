@@ -1,10 +1,4 @@
-<?php $session = session();
- if($session->get('isLoggedIn') == 0 || $session->get('isLoggedIn') == ''){
-    $session->setFlashdata('msg','Please login..');
-    return redirect()->to('login');
- } ?>
-
-<?php include_once(dirname(__FILE__) . '/layouts/header.php'); ?>
+<?php include_once(dirname(__FILE__) . '/layouts/headerguest.php'); ?>
 
 
 
@@ -61,12 +55,6 @@
                                                 <div class="" style="text-align: center;">
                                                     <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="/generateFiletoPDF/<?= $user['DILG_ID']; ?>">
                                                         <i class="fas fa-user-check me-1" > </i>
-                                                    </a>
-                                                    <a class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit" href="/editemployee/<?= $user['DILG_ID']; ?>">
-                                                        <i class="fas fa-user-pen me-1"> </i> 
-                                                    </a>
-                                                    <a class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#myDelete" href="/??????/<?= $user['DILG_ID']; ?>">
-                                                        <i class="fas fa-user-xmark me-1"> </i> 
                                                     </a>
                                                 </div>
                                             </td>

@@ -16,7 +16,12 @@ class PayrollModel extends Model
         'DILG_ID',
         'Name',
         'Position',
-        'Salary'
+        'Salary',
+        'Minutes',
+        'SSS',
+        'Tax',
+        'Month',
+        'Range'
     ];
 
     protected bool $allowEmptyInserts = false;

@@ -46,7 +46,7 @@
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-warning" href="/password">Continue as Guest</a>
+                                                <a class="btn btn-warning" href="/guest">Continue as Guest</a>
                                                 <button type ="submit" class="btn btn-primary btn-block"> Login </button> 
                                                 
                                             </div>

@@ -22,14 +22,24 @@ class Home extends BaseController
         return view('employee_table', $payrolldata);
     }
 
+    public function guest(): string
+    {
+        $pm = new PayrollModel();
+        $payrolldata['users'] = $pm->findall();
+        return view('guest', $payrolldata);
+    }    
+
     public function addemployee(): string
     {
         return view('add_employee');
     }
 
-    public function editemployee(): string
+    public function editemployee($id=null)
     {
-        return view('edit_employee');
+        $pm = new PayrollModel();
+        $datas = $pm->where('DILG_ID',$id)->first();
+        $payroll['data'] = $datas;
+        return view('edit_employee',$payroll);
     }
 
     public function payroll()
@@ -63,6 +73,51 @@ class Home extends BaseController
         }
     }
 
+    public function updatepayroll()
+    {
+        helper(['form']);
+        $payrollrules = [
+            'id'        => 'required|min_length[4]|max_length[100]',
+            'fullname'  => 'required|min_length[5]|max_length[50]',
+            'position'  => 'required|min_length[5]|max_length[50]',
+            'salary'    => 'required|min_length[5]|max_length[50]',
+            'minute'    => 'min_length[0]|max_length[50]',
+            'sss'       => 'min_length[0]|max_length[50]',
+            'tax'       => 'min_length[0]|max_length[50]',
+            'month'     => 'min_length[0]|max_length[50]',
+            'cutoff'    => 'min_length[0]|max_length[50]'
+        ];
+
+        if ($this->validate($payrollrules)) {
+            $session = session();
+            $pm = new PayrollModel();
+            $updatedata = [
+                'DILG_ID'   => $this->request->getVar('id'),
+                'Name'      => $this->request->getVar('fullname'),
+                'Position'  => $this->request->getVar('position'),
+                'Salary'    => $this->request->getVar('salary'),
+                'Minutes'   => $this->request->getVar('minute'),
+                'SSS'       => $this->request->getVar('sss'),
+                'Tax'       => $this->request->getVar('tax'),
+                'Month'     => $this->request->getVar('month'),
+                'Range'     => $this->request->getVar('cutoff')
+            ];  
+
+            $id = $updatedata['DILG_ID'];
+            $pm->where('DILG_ID', $id);
+            $pm->update($updatedata);
+            $session->setFlashdata('msg', $updatedata['Name']." information's updated successfully!");
+            return redirect('employee');
+            // echo '<pre';
+            // var_dump($updatedata);
+            // echo '</pre';
+        }
+        else {
+            $data['validation'] = $this->validator;
+            echo view('add_employee', $data);
+
+        }
+    }
 
     public function store()
     {

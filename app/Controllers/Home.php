@@ -34,6 +34,17 @@ class Home extends BaseController
         return view('add_employee');
     }
 
+    public function deleteemployee($id=null) 
+    {
+        $session=session();
+        $pm = new PayrollModel();
+        $pm->where('DILG_ID', $id)->delete();
+        $payrolldata['users'] = $pm->findall();
+        
+        $session->setFlashdata('msg', "Employee Information deleted successfully!");
+        return view('employee_table', $payrolldata);
+    }
+
     public function editemployee($id=null)
     {
         $pm = new PayrollModel();
@@ -104,13 +115,10 @@ class Home extends BaseController
             ];  
 
             $id = $updatedata['DILG_ID'];
-            $pm->where('DILG_ID', $id);
-            $pm->update($updatedata);
+            $pm->set($updatedata)->where('DILG_ID', $id)->update();
             $session->setFlashdata('msg', $updatedata['Name']." information's updated successfully!");
             return redirect('employee');
-            // echo '<pre';
-            // var_dump($updatedata);
-            // echo '</pre';
+            
         }
         else {
             $data['validation'] = $this->validator;
@@ -148,7 +156,31 @@ class Home extends BaseController
 
         $pm = new PayrollModel();
         $datas = $pm->where('DILG_ID',$id)->first();
-        $payroll['data'] = $datas;
+        $utla = round(($datas['Salary']/22/8/60),2)*$datas['Minutes'];
+        $grosspay = round($datas['Salary']/2,2) - $utla;
+        $tax = 0;
+        $ph = $grosspay * 0.05;
+        $sss = $datas['SSS'];
+        if($datas['Tax']=="Yes"){
+            $tax = $grosspay * 0.08;
+            }
+        $totalDeduc = round($utla,2) + round($tax,2) + round($ph,2) + round($sss,2);
+        $netpay = round($datas['Salary']/2,2) - $totalDeduc;
+            
+        $payroll['data'] = [
+            'DILG_ID'       => $datas['DILG_ID'],
+            'Name'          => $datas['Name'],
+            'Position'      => $datas['Position'],
+            'Salary'        => $datas['Salary'],
+            'Minutes'       => $utla,
+            'SSS'           => $sss,
+            'PH'            => $ph,
+            'Tax'           => $tax,
+            'Month'         => $datas['Month'],
+            'Range'         => $datas['Range'],
+            'TotalDeduc'    => $totalDeduc,
+            'NetPay'        => $netpay
+        ];
 
         $options = new Options();
         $options->set('isRemoteEnable',true);

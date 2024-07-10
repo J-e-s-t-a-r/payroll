@@ -65,12 +65,36 @@
                                                     <a class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit" href="/editemployee/<?= $user['DILG_ID']; ?>">
                                                         <i class="fas fa-user-pen me-1"> </i> 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" title="Delete" data-toggle="modal" data-target="#myDelete" href="/??????/<?= $user['DILG_ID']; ?>">
+                                                    <a class="btn btn-danger btn-sm" title="Delete" data-bs-toggle="modal" data-bs-target="#myDelete<?= $user['DILG_ID']; ?>">
                                                         <i class="fas fa-user-xmark me-1"> </i> 
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr> 
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myDelete<?= $user['DILG_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header" style="background-color: #D54C3C">
+                                                            <h5 class="modal-title" id="exampleModalLabel">ALERT!</h5>
+                                                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <label>Are you sure you want to delete this employee? </label>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a class="btn btn-secondary" title="Cancel" data-bs-dismiss="modal">
+                                                                Close 
+                                                            </a>
+                                                            <a class="btn btn-primary" title="Delete" href="/deleteemployee/<?= $user['DILG_ID']; ?>">
+                                                                Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         <?php endforeach; ?>                                       
                                     </tbody>
                                 </table>
@@ -91,6 +115,5 @@
                     </div>
                 </footer>
             </div>
-
 
 <?php include_once(dirname(__FILE__) . '/layouts/footer.php'); ?>

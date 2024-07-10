@@ -56,21 +56,21 @@
                                             <td>DILG ID:</td>
                                             <td> <?= $data['DILG_ID']; ?> </td>
                                             <td>Month: </td>
-                                            <td> <?= $data['DILG_ID']; ?> </td>
+                                            <td> <?= $data['Month']; ?> </td>
                                         </tr>
                                         
                                         <tr>
                                             <td>Employee Name:</td>
                                             <td> <?= $data['Name']; ?> </td>
                                             <td>Date Range: </td>
-                                            <td> <?= $data['DILG_ID']; ?> </td>
+                                            <td> <?= $data['Range']; ?></td>
                                         </tr>
 
                                         <tr>
                                             <td>Position:</td>
                                             <td> <?= $data['Position']; ?> </td>
                                             <td>with 8% Tax: </td>
-                                            <td> <?= $data['DILG_ID']; ?> </td>
+                                            <td> <?= $data['Tax']; ?> </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -94,30 +94,30 @@
 
                                         <tr>
                                             <td class="td2">Basic Salary</td>
-                                            <td class="td3"> <?= number_format($data['Salary'],2); ?> </td>
+                                            <td class="td3"> <i><?= number_format($data['Salary'],2); ?> </i> </td>
                                             <td class="td2">UT/L/A</td>
-                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
+                                            <td class="td3"> <?= number_format($data['Minutes'],2); ?> </td>
                                         </tr> 
                                         
                                         <tr>
-                                            <td class="td2"></td>
-                                            <td class="td3"></td>
+                                            <td class="td2">Cut-off</td>
+                                            <td class="td3"> <?= number_format($data['Salary']/2,2); ?></td>
                                             <td class="td2">SSS</td>
-                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
+                                            <td class="td3"> <?= number_format($data['SSS']*2,2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2">PhilHealth</td>
-                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
+                                            <td class="td3"> <?= number_format($data['PH'],2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2">8% Tax</td>
-                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
+                                            <td class="td3"> <?= number_format($data['Tax'],2); ?> </td>
                                         </tr>
 
                                         <tr>
@@ -129,16 +129,16 @@
 
                                         <tr>
                                             <td class="td2">TOTAL EARNINGS</td>
-                                            <td class="td3"><?= number_format($data['Salary']*2,2); ?></td>
+                                            <td class="td3"><?= number_format($data['Salary']/2,2); ?></td>
                                             <td class="td2">TOTAL DEDUCTIONS</td>
-                                            <td class="td3"> <?= number_format($data['Salary']*2,2); ?> </td>
+                                            <td class="td3"> <?= number_format($data['TotalDeduc'],2); ?> </td>
                                         </tr>
 
                                         <tr>
                                             <td class="td2"></td>
                                             <td class="td3"></td>
                                             <td class="td2"><b> NET SALARY </b></td>
-                                            <td class="td3"><b> <?= number_format($data['Salary']*2,2); ?> </b></td>
+                                            <td class="td3"><b> <?= number_format($data['NetPay'],2); ?> </b></td>
                                         </tr>
 
                                         

@@ -11,6 +11,8 @@ $routes->get('/employee', 'Home::employee');
 $routes->get('/addemployee', 'Home::addemployee');
 $routes->get('/guest', 'Home::guest');
 $routes->get('/editemployee/(:any)', 'Home::editemployee/$1');
+$routes->get('/deleteemployee/(:any)', 'Home::deleteemployee/$1');
+
 
 $routes->get('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');

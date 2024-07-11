@@ -33,7 +33,7 @@
 
 
                             <div class="card-body">
-                                <form action ="/updatepayroll" method ="post">
+                                <form action ="<?php echo base_url('../updatepayroll');?>" method ="post">
                                 <?php if($data): ?> 
                                     <div class="row mb-3">
                                         <div class="col-md-6">

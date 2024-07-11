@@ -70,7 +70,7 @@
                                             <td>Position:</td>
                                             <td> <?= $data['Position']; ?> </td>
                                             <td>with 8% Tax: </td>
-                                            <td> <?= $data['Tax']; ?> </td>
+                                            <td> <?php if($data['Tax']>0): echo "Yes"; endif; ?> </td>
                                         </tr>
                                     </tbody>
                                 </table>

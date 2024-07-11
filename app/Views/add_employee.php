@@ -33,7 +33,7 @@
 
 
                             <div class="card-body">
-                            <form action ="/payroll" method ="post">
+                            <form action ="<?php echo base_url('../payroll');?>" method ="post">
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">

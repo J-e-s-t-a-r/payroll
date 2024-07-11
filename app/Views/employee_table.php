@@ -46,6 +46,7 @@
                                             <th>DILG ID</th>
                                             <th>Position</th>
                                             <th>Basic Salary</th>
+                                            <th>UT/L/A in Minutes</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -56,13 +57,14 @@
                                             <td> <?= $user['Name']; ?> </td>
                                             <td> <?= $user['DILG_ID']; ?> </td>
                                             <td> <?= $user['Position']; ?> </td>
-                                            <td style="text-align:center"> <?= number_format($user['Salary']); ?> </td>
+                                            <td> <?= number_format($user['Salary']); ?> </td>
+                                            <td> <?= number_format($user['Minutes']); ?> </td>
                                             <td>
                                                 <div class="" style="text-align: center;">
-                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="/generateFiletoPDF/<?= $user['DILG_ID']; ?>">
+                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="<?php echo base_url('../generateFiletoPDF/'.$user['DILG_ID']); ?>">
                                                         <i class="fas fa-user-check me-1" > </i>
                                                     </a>
-                                                    <a class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit" href="/editemployee/<?= $user['DILG_ID']; ?>">
+                                                    <a class="btn btn-warning btn-sm" title="Edit" data-toggle="modal" data-target="#myEdit" href="<?php echo base_url('../editemployee/'.$user['DILG_ID']); ?>">
                                                         <i class="fas fa-user-pen me-1"> </i> 
                                                     </a>
                                                     <a class="btn btn-danger btn-sm" title="Delete" data-bs-toggle="modal" data-bs-target="#myDelete<?= $user['DILG_ID']; ?>">
@@ -87,7 +89,7 @@
                                                             <a class="btn btn-secondary" title="Cancel" data-bs-dismiss="modal">
                                                                 Close 
                                                             </a>
-                                                            <a class="btn btn-primary" title="Delete" href="/deleteemployee/<?= $user['DILG_ID']; ?>">
+                                                            <a class="btn btn-primary" title="Delete" href="<?php echo base_url('../deleteemployee/'.$user['DILG_ID']); ?>">
                                                                 Delete
                                                             </a>
                                                         </div>

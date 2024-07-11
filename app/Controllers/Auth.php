@@ -7,12 +7,12 @@ class Auth extends BaseController
 {
     public function login(): string
     {
-        return view('login');
+        return view('/login');
     }
 
     public function register(): string
     {
-        return view('register');
+        return view(base_url('../register'));
     }
 
     public function logout(): string
@@ -24,7 +24,7 @@ class Auth extends BaseController
             'isLoggedIn' => FALSE
         ];
         $session->set($session_data);
-        return view('login');
+        return view('/login');
     }
 
 
@@ -38,8 +38,6 @@ class Auth extends BaseController
 
         $data = $login->where('username',$user)->first();
 
-        //var_dump($data);
-
         if ($data){
             $pass = $data['password'];
             $authenticate = password_verify($password, $pass);
@@ -50,26 +48,19 @@ class Auth extends BaseController
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($session_data);
-                return redirect()->to('employee');
+                return redirect()->to(base_url('../employee'));
 
             else:
                 $session->setFlashdata('msg','Username and password didnt match');
-                return redirect()->to('login');
+                return redirect()->to(base_url('../login'));
 
             endif;
         }
         else {
             $session->setFlashdata('msg','Incorrect Username or password');
-            return redirect()->to('login');
+            return redirect()->to(base_url('../login'));
         }
     }
 
-    // public function reg($id = null)
-    // {
-    //     $data['data'] = $id;
-    //     return view('Auth/register', $data);
-    //     //sample
-    // }
-    
 
 }

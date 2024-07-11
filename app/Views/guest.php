@@ -53,7 +53,7 @@
                                             <td style="text-align:center"> <?= number_format($user['Salary']); ?> </td>
                                             <td>
                                                 <div class="" style="text-align: center;">
-                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="/generateFiletoPDF/<?= $user['DILG_ID']; ?>">
+                                                    <a class="btn btn-sm btn-info" title="View" data-toggle="modal" data-target="#mySave" href="<?php echo base_url('../generateFiletoPDF/'.$user['DILG_ID']); ?>">
                                                         <i class="fas fa-user-check me-1" > </i>
                                                     </a>
                                                 </div>

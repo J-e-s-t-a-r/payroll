@@ -10,16 +10,17 @@ use App\Models\PayrollModel;
 
 class Home extends BaseController
 {
-    public function index(): string
-    {
-        return view('welcome_message');
-    }
+    // public function index(): string
+    // {
+    //     return view('welcome_message');
+    // }
 
     public function employee(): string
     {
         $pm = new PayrollModel();
         $payrolldata['users'] = $pm->findall();
         return view('employee_table', $payrolldata);
+        
     }
 
     public function guest(): string

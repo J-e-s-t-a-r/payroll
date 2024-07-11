@@ -106,7 +106,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
                                 Add New Employee
                             </a> -->
-                            <a class="nav-link" href="/guest">
+                            <a class="nav-link" href="<?php echo base_url('../guest');?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Employee
                             </a>

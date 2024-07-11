@@ -36,7 +36,7 @@
 
 
                                     <div class="card-body">
-                                        <form action = "/auth" method='post'>
+                                        <form action = "<?php echo base_url('../auth');?>" method='post'>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="username" id="inputUsername" type="username" placeholder="Username" />
                                                 <label for="inputUsername">Username</label>
@@ -46,7 +46,7 @@
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-warning" href="/guest">Continue as Guest</a>
+                                                <a class="btn btn-warning" href="<?php echo base_url('../guest');?>">Continue as Guest</a>
                                                 <button type ="submit" class="btn btn-primary btn-block"> Login </button> 
                                                 
                                             </div>

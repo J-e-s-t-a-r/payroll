@@ -102,11 +102,11 @@
                             </a> -->
 
                             <div class="sb-sidenav-menu-heading">Production</div>
-                            <a class="nav-link" href="/addemployee">
+                            <a class="nav-link" href="<?php echo base_url('../addemployee');?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
                                 Add New Employee
                             </a>
-                            <a class="nav-link" href="/employee">
+                            <a class="nav-link" href="<?php echo base_url('../employee');?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Employee
                             </a>
